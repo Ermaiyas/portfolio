@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elegant & Modern Website</title>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    /* Global Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Raleway', sans-serif;
+      background-color: #f4f6f9;
+      color: #333;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* Navigation Bar */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      background-color: #fff;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    nav a {
+      color: #333;
+      font-weight: 600;
+      font-size: 18px;
+      margin: 0 20px;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #1e90ff;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: 700;
+      color: #1e90ff;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(to right, rgba(30, 144, 255, 0.7), rgba(0, 255, 255, 0.7)), url(/images/hotel-achilles.webp) no-repeat center center/cover;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      position: relative;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.4);
+    }
+
+    .hero .content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero h1 {
+      font-size: 60px;
+      font-weight: 600;
+      margin-bottom: 20px;
+      letter-spacing: 1px;
+    }
+
+    .hero p {
+      font-size: 20px;
+      margin-bottom: 30px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.5;
+      opacity: 0.85;
+    }
+
+    .cta-btn {
+      background-color: #1e90ff;
+      color: #fff;
+      padding: 12px 40px;
+      border-radius: 50px;
+      font-size: 18px;
+      transition: background-color 0.3s, transform 0.3s;
+      cursor: pointer;
+    }
+
+    .cta-btn:hover {
+      background-color: #0056b3;
+      transform: scale(1.05);
+    }
+
+    /* Services Section */
+    .services {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 80px 20px;
+      gap: 30px;
+      text-align: center;
+      background-color: #fff;
+    }
+
+    .service-card {
+      background-color: #f9f9f9;
+      width: 300px;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .service-card h3 {
+      font-size: 24px;
+      font-weight: 600;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .service-card p {
+      font-size: 16px;
+      color: #666;
+    }
+
+    /* About Section */
+    .about {
+      display: flex;
+      justify-content: space-between;
+      padding: 100px 20px;
+      align-items: center;
+    }
+
+    .about-text {
+      max-width: 500px;
+    }
+
+    .about h2 {
+      font-size: 40px;
+      font-weight: 600;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .about p {
+      font-size: 18px;
+      line-height: 1.6;
+      color: #666;
+      opacity: 0.9;
+    }
+
+    .about img {
+      width: 500px;
+      border-radius: 10px;
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Footer */
+    footer {
+      background-color: #1e90ff;
+      color: #fff;
+      padding: 40px;
+      text-align: center;
+      font-size: 16px;
+    }
+
+    footer a {
+      color: #fff;
+      margin: 0 10px;
+    }
+
+    footer a:hover {
+      color: #ffdf40;
+    }
+
+    /* Responsive Design */
+    @media screen and (max-width: 768px) {
+      .hero h1 {
+        font-size: 45px;
+      }
+
+      .hero p {
+        font-size: 18px;
+      }
+
+      .services {
+        flex-direction: column;
+        padding: 60px 20px;
+      }
+
+      .about {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .about img {
+        width: 80%;
+        margin-top: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav>
+    <div class="logo">MaBrand</div>
+    <div>
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Services</a>
+      <a href="#">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="content">
+      <h1>Transform Your Digital Experience</h1>
+      <p>Join us to unlock cutting-edge solutions and bring your business into the future. Let’s build something amazing together!</p>
+      <button class="cta-btn">Get Started</button>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="services">
+    <div class="service-card">
+      <h3>Web Development</h3>
+      <p>We build fast, scalable, and user-friendly websites tailored to your needs.</p>
+    </div>
+    <div class="service-card">
+      <h3>App Development</h3>
+      <p>Our apps provide smooth user experiences and seamless functionality on all devices.</p>
+    </div>
+    <div class="service-card">
+      <h3>SEO Optimization</h3>
+      <p>Boost your site’s visibility on search engines and drive more organic traffic.</p>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about">
+    <div class="about-text">
+      <h2>About Us</h2>
+      <p>We are a passionate team of designers, developers, and innovators. Our goal is to help businesses elevate their online presence with powerful, customized solutions that drive results.</p>
+    </div>
+    <img src="https://th.bing.com/th/id/R.d30f5029dffd2520b77ac5cedf9f075a?rik=apn1s6NGENCfnw&pid=ImgRaw&r=0" alt="About Us Image">
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 Brand. All rights reserved.</p>
+    <div>
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+      <a href="#">Sitemap</a>
+    </div>
+  </footer>
+
+</body>
+</html>

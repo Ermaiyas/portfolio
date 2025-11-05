@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beautiful Homepage</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    /* Global Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f3f4f6;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* Navigation Bar */
+    nav {
+      background-color: #2d3748;
+      padding: 20px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 25px;
+      font-weight: 600;
+      font-size: 18px;
+      letter-spacing: 1px;
+    }
+
+    nav a:hover {
+      color: #38b2ac;
+      transition: 0.3s;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(to right, rgba(58, 178, 172, 0.7), rgba(0, 0, 0, 0.5)), url('https://via.placeholder.com/1920x800') no-repeat center center/cover;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      padding: 0 20px;
+      background-size: cover;
+    }
+
+    .hero h1 {
+      font-size: 80px;
+      font-weight: 600;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    }
+
+    .hero p {
+      font-size: 22px;
+      margin-bottom: 30px;
+      max-width: 750px;
+      margin-left: auto;
+      margin-right: auto;
+      opacity: 0.9;
+    }
+
+    .cta-btn {
+      background-color: #38b2ac;
+      color: white;
+      padding: 15px 35px;
+      font-size: 20px;
+      border-radius: 50px;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .cta-btn:hover {
+      background-color: #319795;
+      transform: scale(1.1);
+    }
+
+    /* Features Section */
+    .features {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 80px 20px;
+      background-color: #ffffff;
+      gap: 40px;
+    }
+
+    .feature-box {
+      text-align: center;
+      padding: 40px;
+      background-color: #edf2f7;
+      border-radius: 15px;
+      width: 250px;
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .feature-box:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    }
+
+    .feature-box i {
+      font-size: 60px;
+      color: #38b2ac;
+      margin-bottom: 20px;
+    }
+
+    .feature-box h3 {
+      font-size: 26px;
+      margin-bottom: 10px;
+      color: #333;
+      font-weight: 600;
+    }
+
+    .feature-box p {
+      font-size: 16px;
+      color: #666;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #2d3748;
+      color: white;
+      text-align: center;
+      padding: 30px;
+      font-size: 16px;
+    }
+
+    /* Responsive Design */
+    @media screen and (max-width: 768px) {
+      .hero h1 {
+        font-size: 50px;
+      }
+
+      .hero p {
+        font-size: 18px;
+      }
+
+      .features {
+        flex-direction: column;
+        padding: 60px 20px;
+      }
+
+      .feature-box {
+        width: 80%;
+        margin-bottom: 40px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#">Contact</a>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div>
+      <h1>Welcome to Our Beautiful Website</h1>
+      <p>Your gateway to amazing services and delightful experiences. Explore, discover, and achieve greatness with us.</p>
+      <button class="cta-btn">Get Started</button>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features">
+    <div class="feature-box">
+      <i class="fas fa-cogs"></i>
+      <h3>Easy Setup</h3>
+      <p>Get started effortlessly with our simple and intuitive setup process.</p>
+    </div>
+    <div class="feature-box">
+      <i class="fas fa-headset"></i>
+      <h3>24/7 Support</h3>
+      <p>We’re here for you around the clock, ready to solve your problems at any time.</p>
+    </div>
+    <div class="feature-box">
+      <i class="fas fa-shield-alt"></i>
+      <h3>Secure & Reliable</h3>
+      <p>Your data is safe with us, and our service is always reliable and ready when you need it.</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 Beautiful Website. All rights reserved.</p>
+  </footer>
+
+  <!-- Font Awesome Icons (for features) -->
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</body>
+</html>
