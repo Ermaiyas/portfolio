@@ -174,25 +174,38 @@ margin-right: 15px;
     font-family: sans-serif;
     animation: freezer2 3s 0s;
 }
-/*---------------------- here is the carrer ------------ */
+/*---------------------- hero-section begins ------------ */
+.hero-section{
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    margin: 0;
+    overflow: hidden;
+    background-color: white;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
 .careers{
-    position: absolute;
-    top: 110px;
-    justify-content: center;
+    /* position: absolute;
+    top: 110px; */
+    
     display: flex;
+    justify-content: center;
     font-size: xx-large;
    flex-direction: column;
    z-index: 10;
-   transform: translateX(-50%);
-   left: 50%; 
-   width: screen;
- 
+   transform: translateX(0%);
+   width: 100vw;
+   min-width: 100%;
+   /* background-color: rgba(255, 0, 0, 0.514);
+  */
 }
 .wDesigner h1{
    mix-blend-mode: exclusion;
     width: fit-content;
-    display: flex;
-    justify-content: center;
+    /* display: flex;
+    justify-content: center; */
     -webkit-text-stroke: 2px;
     -webkit-text-stroke-color: rgb(8, 8, 8);
     cursor: alias;
@@ -202,6 +215,9 @@ margin-right: 15px;
     animation: slide 2s var(--after) forwards;
     opacity: 0;
     font-size: 5rem;
+    /* transform: translateX(50%); */
+      /* position: relative; */
+  /* left: 400px; */
 }
 @keyframes slide{
     0%{
@@ -213,11 +229,10 @@ margin-right: 15px;
     }
 }
 .wDeveloper h1{
+  
     color: white;
     mix-blend-mode: darken;
     width: fit-content;
-    scale: 1;
-    justify-content: center;
     stroke-linecap: square;
     -webkit-text-stroke: 2px;
     -webkit-text-stroke-color: black;
@@ -227,6 +242,7 @@ margin-right: 15px;
     animation: slide2 2s var(--after) forwards ;
    opacity: 0;
    font-size: 5rem;
+   
 }
 @keyframes slide2{
     0%{
@@ -364,13 +380,14 @@ mix-blend-mode: darken;
     margin: 0;
     position: absolute;
     background-color: var(--varB);
-    height: 100vh;
+    background-color: rgb(151, 145, 145);
+    height: max-content;
     width: 100%;
     top: 100vh;
     z-index: 1010;
 
 }
-.sheader{
+.secondary_header{
     color: var(--varW);
     display: flex;
     justify-content: center;
@@ -392,22 +409,39 @@ margin-left: 0px;
     margin-left: 50px;
     font-size: 1.5rem;
 }
+ 
+
 .p1 img{
-    display: flex;
-    justify-content: end;
+    /* display: flex;
+    justify-content: end; */
     width: 150px;
     filter: grayscale(70%);
-}
-.p1 img:last-child{
     position: absolute;
     transform: rotate(20deg);
     background-size: cover;
     z-index: 0;
-    left: 60%;
+      animation: positioner3_img2 3s .1s infinite ease-out alternate-reverse;
+    
     transition-delay: 100ms;
-    animation: positioner3 3s .1s infinite ease-out alternate-reverse;
+
 }
-.p1 img:hover{
+:root{
+  --top0: ;
+  --top100: ;
+
+}
+
+.box3{
+  position: absolute;
+  left: 62%;
+      animation: positioner32 3s .1s infinite ease-out alternate-reverse;
+}
+.box3:hover2{
+    animation-play-state: paused;
+    filter: grayscale(0);
+}
+
+.p1 img:hover2{
     /* border-bottom: 2px var(--sec) solid; */
     z-index: 10;
     scale: 1.2;
@@ -433,27 +467,44 @@ margin-left: 0px;
     }
 }
 @keyframes positioner3{
-    0%{
-        transform: rotate(-20deg);
-        top: 20%;
+    100%{
+        
+        top: var(--top0);
  
     }
+    0%{
+      
+       top:var(--top100);
+       
+    }
+}
+@keyframes positioner3_img{
     100%{
+        transform: rotate(-20deg);
+        
+ 
+    }
+    0%{
        transform: rotate(20deg);
-       top:30%;
+       
     }
 }
 .skills{
-    width: 85%;
-    display: flex;
-    justify-content: space-around;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+
+  transform: translateY(60px);
 }
 .skill:hover{
     scale: 1.1;
 }
 .skills .skill{
     background-color:var(--varW);
-    width: 25%;
+    width: fit-content;
+    min-width: 200px;
+    height: auto;
     padding: 10px;
     padding-bottom:30px;
     border-radius: 20px;
@@ -476,7 +527,7 @@ margin-left: 0px;
     height: 15px;
     border: 1px black solid;
     border-radius: 10px;
-    background: rgb(255,255,255);
+    background: rgb(255, 255, 255);
     background: linear-gradient(100deg, rgba(255,255,255,1) 19%, rgba(136,136,136,1) 64%, rgba(0,0,0,1) 100%);
     background-repeat: no-repeat;
 }
@@ -527,9 +578,10 @@ margin-left: 0px;
 /* -------------------page3---------------------- */
 
 .page3{
+  position: relative;
     width: 100%;
     margin: 0;
-    height: 100vh;
+    height: max-content;
     position: absolute;
     top: 200vh;
     color:rgba(0, 0, 0, 0.918);
@@ -588,9 +640,9 @@ scale: 1.09;
 
 
 footer{
-    position: absolute;
-    top: 300vh;
-    width: 100vw;
+    position: relative;
+    bottom: 0px;
+    width: 100%;
     height: fit-content;
     background: rgba(0, 0, 0, 0.795);
 }
@@ -628,78 +680,6 @@ svg:hover{
 
 }
 
-/* ------------------------mb-view---------------- */
-
-@media (max-width:1300px){
-    body{
-        width: 100%;
-        overflow-x: hidden;
-    }
-    .careers{
-        scale: .65;
-        margin: 0px;
-        left: 260px;
-    }
-    .mNav1{
-        display: flex;
-align-items: center;
-margin-right: 15px;
-    }
-    .mNav1:hover{
-        display: flex;
-        align-items: center;
-        margin-right: 15px;
-    }
-    .page2{
-        width: 100%;
-    }
-    .p1 p{
-        scale: 1;
-        width: 50%;
-        margin-left: 10px;
-    }
-    .p1 img{
-        scale: .8;
-        margin-right: 10px;
-    }
-    .skills{
-        width: 100%;
-    }
-    .rank{
-        width: 130px;
-    }
-    .page3{
-        margin: 0px;
-        scale: 1;
-        height: max-content;
-    }
-    .project-images{
-        margin: 0px;
-        display: inline-block;
-    }
-    .project-images img{
-        scale: .9;
-        display: flexbox;
-        margin: 0px;
-        top: 0px;
-    }
-    footer{
-        position: absolute;
-        top: 355vh;
-        width: 100%;
-        
-    }
-    #circle{
-        width: 0px;
-        height: 0px;
-        opacity: 0;
-    }
-}
-/* @media (width:1317px){
-    footer{
-        top: 450vh;
-    }
-} */
 
 
 
@@ -1150,7 +1130,7 @@ margin-right: 15px;
     transition-delay: 100ms;
     animation: positioner 3s .1s ease-in-out infinite alternate-reverse;
 }
-#box,.box2{
+.box,.box2{
     width: 20rem;
     height: 25rem;
     cursor: pointer;
@@ -1206,4 +1186,119 @@ margin-right: 15px;
 
 .box:hover .bird,.box2:hover .bird2{
     transform: translateY(-200px) translateX(-10px);
+}
+
+
+
+
+
+/* ------------------------mb-view---------------- */
+
+
+
+@media (max-width:1300px){
+    body{
+        width: 100%;
+        overflow-x: hidden;
+    }
+  
+    .mNav1{
+        display: flex;
+    align-items: center;
+    margin-right: 15px;
+    }
+    .mNav1:hover{
+        display: flex;
+        align-items: center;
+        margin-right: 15px;
+    }
+
+.skills{
+        min-width: 400px;
+        display: flex;
+        align-items: center;
+       
+        
+    } 
+.rank{
+        width: 130px;
+    }*/
+ .page3{
+        margin: 0px;
+        scale: 1;
+        height: max-content;
+    } 
+ .project-images{
+        margin: 0px;
+        display: inline-block;
+    }
+.project-images img{
+        scale: .9;
+        display: flexbox;
+        margin: 0px;
+        top: 0px;
+    }
+    footer{
+        position: absolute;
+        top: 355vh;
+        width: 100%;
+        
+    }
+    #circle{
+        width: 0px;
+        height: 0px;
+        opacity: 0;
+    }
+    footer{
+    position: relative;
+    bottom: 0px;
+    width: 100vw;
+    height: fit-content;
+    background: rgba(0, 0, 0, 0.795);
+    }
+}
+@media (max-width:950px){
+    
+.page2{
+        width: 100%;
+        height: max-content;
+    }
+
+    .p1 p{
+        scale: 1;
+        width: 80%;
+        margin-left: 10px;
+        left: 10%;
+      
+    }
+    #framed-photos{
+  display: flex;
+  justify-content: space-between;
+ 
+    width: 100vw;
+    margin: 0px;
+    height: 400px;
+    transform: translate(0px,250px);
+    scale: 0.9;
+     min-width: 100vw;}
+    
+    .box3{
+      left: 38%;
+      
+    }
+    #box2{
+      position: relative;
+      left: 48%;
+    }
+    #box{
+      transform: translateX(-110%);
+      
+    }
+    .skills{
+      transform: translateY(240px);
+    }
+    #js{
+      transform: translate(-450px,200px);
+    }
+  
 }

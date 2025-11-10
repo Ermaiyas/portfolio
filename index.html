@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>portfolio</title>
+    <title>ERMIYAS</title>
     <link rel="stylesheet" href="herosection.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -30,7 +30,7 @@
     <div class="Header1">
     <div class="mainHeader">
         <header>
-           <img src="/images/ermiyass.png" alt="" height="50px">
+           <img src="/images/logo.png" alt="" height="50px">
     </header>
     <!-- <img src="projects/Photoroom-20241129_173719.png" alt="" width="90px" height="80px"> -->
     <div class="mNav1">
@@ -44,15 +44,55 @@
         window.alert("More photos will be uploaded soon. Thank you")}
     </script>
 </nav></div>
-</div></div>
-<p class="hello">	&#x1F44BMy Name is Ermiyas and I am a freelancer</p> 
+</div></div>   
+    <!-- ---------------hero section----------- -->
+     <div class="hero-section" id="hero-section">
+<p class="hello">	&#x1F44BMy Name is Ermiyas and I am a Developer</p> 
 <div class="careers">
 
-    <div class="wDesigner"><h1>webdesigner</h1></div>
+    <div class="wDesigner"><h1 class="wDer">webdesigner</h1></div>
 
-    <div class="wDeveloper"><h1 id="wDvp">webdeveloper</h1> </div>
+    <div class="wDeveloper"><h1 class="wDvp">webdeveloper</h1> </div>
     <div class="dphoto">
     <img class="photo" src="/projects/Photoroom-20241129_122117.png" alt=" image of achilles"></div>
+
+
+    <script defer>
+
+  const careers = document.querySelector('.careers');
+  const wDer = document.querySelector('.wDer');
+  const wDvp = document.querySelector('.wDvp');
+
+  function scaleCareers() {
+    // let center_er= Math.min(window.innerWidth / 1920);
+    let scale = Math.min(window.innerWidth / 1920, 1);
+    if(scale<=0.4)
+      scale=0.4;
+    
+    let inner_width=window.innerWidth;
+   
+    let careers_position =inner_width/192*5+'%';
+    wDer.style.transform=`translateX(${careers_position})`;
+    wDvp.style.transform=`translateX(${careers_position})`;
+
+     if(window.innerWidth<=600){
+      careers_position =window.innerWidth/650+'%';
+      wDer.style.transform=`translateX(${careers_position})`;
+    wDvp.style.transform=`translateX(${careers_position})`;
+    careers.style.transform = `scale(${scale})`;
+     };
+
+
+ 
+    careers.style.transform = `scale(${scale})`;
+
+
+  }
+
+  window.addEventListener('resize', scaleCareers);
+  scaleCareers(); // initial call
+</script>
+           <!-----button--- -->
 
 </div>
 <div class="btns"> <div class="btn2"> <a href="#page2">More info</a>
@@ -182,6 +222,7 @@
     </div>
   </button></a>
 </div>
+</div>
 
 
 
@@ -189,27 +230,159 @@
 
 
 <section class="page2" id="page2">
-    <div class="sheader">Who is Ermiyas ?</div>
+  <script>
+    let i=0;
+    while(i<10){
+    const page2=document.getElementById('page2');
+  let hyt=window.getComputedStyle(page2).getPropertyValue('height');
+  console.log(hyt);
+i++}
+    page2.style.minHeight=`${window.innerHeight}px`;
+  </script>
+    <div class="secondary_header">Who is Ermiyas ?</div>
     <div class="p1">
-   <p class="p">I am Ermiyas Befkadu. I am a 20 years old man living in Ethiopia.I have learned and mastered HTML CSS & JAVASCRIPT from kotebe universiy of education and various online cousre providers. I can assist you in any project regarding web designing and development!</p>
+   <p class="p" id="p">I am Ermiyas Befkadu. I am a 20 years old man living in Ethiopia.I have learned and mastered HTML CSS & JAVASCRIPT from kotebe universiy of education and various online cousre providers. I can assist you in any project regarding web designing and development!</p>
 
    <!-- <div class="images"> -->
-    
+    <div class="framed-photos" id="framed-photos">
       <div class="box" id="box">
         <div class="bg"></div>
         <div class="bird"></div>
-    </div>       <div class="box2">
+    </div> 
+      <div class="box2" id="box2">
       <div class="bg2"></div>
-      <div class="bird2"></div></div>   <img src="/images/Myphoto.png" alt="photo3">
+      <div class="bird2"></div></div> 
+      <div class="box3_toper">
+      <div class="box3" id="box3">
+        <img src="/images/Myphoto.png" alt="photo3" class="box3_img"></div>  </div>
    </div>
+   </div>
+   <script>
+    let inner_width=window.innerWidth;
+    console.log(inner_width);
+    const box3 = document.querySelector('.box3');
+    const box3_img = document.querySelector('.box3_img');
+    let top0='100px';
+    let top100='250px';
+    let hovered_position;
+
+    // function shower(){
+     
+    //  let res= window.getComputedStyle(box3).getPropertyValue('top');
+    //  let WIDTH=window.innerWidth;
+    //   console.log('res',res);
+    //   console.log('inner_width',WIDTH);
+    // }
+    //    window.addEventListener('resize',shower);
+    //    shower();
+     
+
+// window.addEventListener('resize',up_er);
+// up_er();
+// function re_positioner(){ 
+//   framed_photos.style.transform=`translate(0,-200px)`;
+  // framed_photos.style.background-color='blue';
+//  }
+function up_er(){
+   let screen_width=window.innerWidth;
+   const framed_photos=document.getElementById('framed-photos');
+   let frame_positionY='200px';
+   const box = document.getElementById('box');
+   const box2 = document.getElementById('box2');
+
+    if(screen_width>950&&screen_width<1200){
+    let up_top0=Math.min(window.innerWidth/950*40)+'px';
+    up_top100=Math.min(window.innerWidth/1200*150)+'px';
+    box3.animate([
+  { top: `${up_top0}`},
+  { top: `${up_top100}`}
+], {
+  duration: 2000,
+  iterations: Infinity,
+  direction: 'alternate'
+}); }
+
+window.addEventListener('resize',()=>{
+  if(screen_width<950){
+    const p= document.getElementById('p');
+
+    const box = document.getElementById('box');
+  frame_positionY=((950/screen_width*200)+100)+'px';
+  framed_photos.style.transform=`translateY(${frame_positionY})`;
+ 
+
+  }
+});
+
+
+}
+
+
+const animation = box3.animate([
+  { top: `${top0}`},
+  { top: `${top100}`}
+], {
+  duration: 2000,
+  iterations: Infinity,
+  direction: 'alternate'
+});
+
+
+  
+
+
+
+
+
+  box3.addEventListener('mouseenter', (e)=>{
+    let pos = window.getComputedStyle(box3).getPropertyValue('top');
+
+    console.log('pos',pos);
+    offSetY=e.clientY;
+    
+    box3_img.style.filter='grayScale(0%)';
+    box3_img.style.scale=1.2;
+    
+    animation.effect.setKeyframes([
+  { top: `${pos}`},
+  { top: `${pos}`} // change the target position
+]);
+  })
+
+box3.addEventListener('mouseleave', (e) => {
+  
+  box3_img.style.filter='grayscale(70%)';
+       box3_img.style.scale=1;
+
+ box3.animate([
+  { top: `${top0   }`},
+  { top: `${top100}`}
+])
+  animation.effect.setKeyframes([
+  { top: `${top0}`},
+  { top: `${top100}`} // change the target position
+]);
+});
+
+// later, change the keyframes dynamically
+animation.effect.updateTiming({ duration: 2000 }); // speed it up
+animation.effect.setKeyframes([
+  { top: `${top0}`},
+  { top: `${top100}`} // change the target position
+]);
+
+   </script>
+   <div class="languge" id="languge"></div>
    <div class="skills">
-    <div  class="skill" id="html"><img src="images/html.png" alt="html" width="100" height="100px"><p> I have all the knowledge needed to acomplish any task related to HTML </p>
+    <span class="skill" id="html"><img src="images/html.png" alt="html" width="100" height="100px"><p> I have all the knowledge needed to acomplish any task related to HTML </p>
         <table><tr><td>%</td><td><div class="rank" id="html1"></div></td><td>95%</td></tr></table>
-</div>
+    </span>
+
     <div class="skill" id="css"><img src="images/css.png" width="100" height="100px" alt="css">
     <p>I usually use my CSS knowledge to make many animations that makes the website stand out & responsive</p> <table><tr><td>%</td><td><div class="rank" id="css1"></div></td><td>85%</td></tr></table>
 </div>
     <div  class="skill" id="js"><img src="images/js.png" width="100" height="100px" alt="js"><p>My knowledge on JAVASCRIPT can make any website come to live</p>  <table><tr><td>%</td><td><div class="rank" id="js1"></div></td><td>60%</td></tr></table>
+   </div>
    </div>
 </section>
 
@@ -240,5 +413,7 @@
     <a href="https://www.insagram.com/achilles0eth/profilecard/?igsh=MTNsNDU4cDA0c2ozcQ=="><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg></a>
     <a href="https://t.me/AchillesET"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M248 8C111 8 0 119 0 256S111 504 248 504 496 393 496 256 385 8 248 8zM363 176.7c-3.7 39.2-19.9 134.4-28.1 178.3-3.5 18.6-10.3 24.8-16.9 25.4-14.4 1.3-25.3-9.5-39.3-18.7-21.8-14.3-34.2-23.2-55.3-37.2-24.5-16.1-8.6-25 5.3-39.5 3.7-3.8 67.1-61.5 68.3-66.7 .2-.7 .3-3.1-1.2-4.4s-3.6-.8-5.1-.5q-3.3 .7-104.6 69.1-14.8 10.2-26.9 9.9c-8.9-.2-25.9-5-38.6-9.1-15.5-5-27.9-7.7-26.8-16.3q.8-6.7 18.5-13.7 108.4-47.2 144.6-62.3c68.9-28.6 83.2-33.6 92.5-33.8 2.1 0 6.6 .5 9.6 2.9a10.5 10.5 0 0 1 3.5 6.7A43.8 43.8 0 0 1 363 176.7z"/></svg></a></center></div>
 </footer>
+
+
 </body>
 </html>
